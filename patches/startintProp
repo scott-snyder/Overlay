@@ -1,0 +1,13 @@
+Bottom: 6880fc85c318e72c4fb72b92a83c29d41e26da3d
+Top:    6880fc85c318e72c4fb72b92a83c29d41e26da3d
+Author: scott snyder <snyder@bnl.gov>
+Date:   2023-04-29 23:11:57 -0400
+
+Make starting integration time a configurable property.
+
+The starting integration time was hardcoded to -0.25ns.  Hits earlier
+than that time were removed.
+
+However, if vertex smearing is enabled in time, then we may see legitimate
+hits earlier than that (for FCC, the smearing width is about 1.9 ns).
+Add a property to set this value, rather then hardcoding it.
