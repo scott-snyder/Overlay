@@ -1,9 +1,11 @@
 ########################################################
 # cmake file for building Overlay Package
 # @author Jan Engels, Desy IT
-CMAKE_MINIMUM_REQUIRED(VERSION 2.6 FATAL_ERROR)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.10 FATAL_ERROR)
 ########################################################
 
+
+cmake_policy(SET CMP0167 NEW)
 
 # project name
 PROJECT( Overlay )
