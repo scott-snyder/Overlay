@@ -1,0 +1,8 @@
+Bottom: 029374e04cb7d19dfc8767d8db3f495918ace21d
+Top:    029374e04cb7d19dfc8767d8db3f495918ace21d
+Author: sss <sss@karma>
+Date:   2025-08-01 16:41:10 -0400
+
+Fix warnings.
+
+Unused variables.
