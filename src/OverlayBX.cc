@@ -538,7 +538,6 @@ namespace overlay{
     //------------------------------------------------------------
   
     int nVXDHits = 0 ;
-    int nTPCHits = 0 ;
 
     for(int i = 0  ; i < numBX  ; i++ ) {
 
@@ -590,7 +589,7 @@ namespace overlay{
 	  
 	    //overlay TPC hits shifted by nBX * drLenBX
 	    if( i < nTPCBX )
-	      nTPCHits += mergeTPCColsFromBX( tpcCol , tpcBGCol ,  zShiftStart + i * drLenBX   )  ;
+	      mergeTPCColsFromBX( tpcCol , tpcBGCol ,  zShiftStart + i * drLenBX   )  ;
 	    //nTPCHits += mergeTPCColsFromBX( tpcCol , tpcBGCol ,  0  )  ; // no z shift for testing
 	  
 	  } catch( DataNotAvailableException& e) {}

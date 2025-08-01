@@ -142,7 +142,6 @@ namespace overlay {
   LCEvent* FPCCDOverlayBX::readNextEvent( int bxNum ){
 
     static int lastBXNum = -1 ; // fixme: make this a class variable....
-    static int lastEvent = -1 ; 
     static int currentRdr = -1 ;
 
 
@@ -169,7 +168,6 @@ namespace overlay {
       _lcReaders[currentRdr]->open( _tmpInputFileNames[currentRdr]  ) ; 
       StringVec::iterator it = _tmpInputFileNames.begin() + currentRdr ;
       it = _tmpInputFileNames.erase(it); // erase the already read file name.
-      lastEvent = -1 ;
 
       lastBXNum = bxNum ;
     }
@@ -178,8 +176,6 @@ namespace overlay {
 
     if( evt == 0 ) {
       lastBXNum = -1 ;
-    }else{
-      ++lastEvent ;
     }
     return evt;
   }
