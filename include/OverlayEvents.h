@@ -33,7 +33,7 @@ namespace overlay {
   
     virtual const std::string & name() const { return Processor::name() ; }
   
-    virtual void modifyEvent( LCEvent * evt ) ;
+    virtual void modifyEvent( lcio::LCEvent * evt ) ;
 
 
     /** Called at the begin of the job before anything is read.
@@ -43,9 +43,9 @@ namespace overlay {
   
     /** Called for every run.
      */
-    virtual void processRunHeader( LCRunHeader* run ) ;
+    virtual void processRunHeader( lcio::LCRunHeader* run ) ;
   
-    virtual void check( LCEvent * evt ) ; 
+    virtual void check( lcio::LCEvent * evt ) ; 
   
   
     /** Called after data processing for clean up.
@@ -57,11 +57,11 @@ namespace overlay {
 
     std::string _outfileName = "";
 
-    LCEventImpl* outEvt = NULL;
+    lcio::LCEventImpl* outEvt = NULL;
   
-    StringVec _mergedCollectionNames{};
+    lcio::StringVec _mergedCollectionNames{};
   
-    LCWriter* _lcWriter{};
+    lcio::LCWriter* _lcWriter{};
   
     int _nRun = 0;
     int _nEvt = 0;
