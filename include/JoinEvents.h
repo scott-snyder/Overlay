@@ -38,14 +38,14 @@ namespace overlay{
   
     /** Called for every run.
      */
-    virtual void processRunHeader( LCRunHeader* run ) ;
+    virtual void processRunHeader( lcio::LCRunHeader* run ) ;
   
     /** Search for the corresponding event and add all collections to the current event.
      */
-    virtual void processEvent( LCEvent * evt ) ; 
+    virtual void processEvent( lcio::LCEvent * evt ) ; 
   
   
-    virtual void check( LCEvent * evt ) ; 
+    virtual void check( lcio::LCEvent * evt ) ; 
   
   
     /** Close the input file.
@@ -61,7 +61,7 @@ namespace overlay{
     /** post fix for collection names. */
     std::string _postFix = "";
 
-    LCReader* _lcReader = NULL;
+    lcio::LCReader* _lcReader = NULL;
 
     //  int _activeRunNumber;
     int _nRun = 0;

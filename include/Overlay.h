@@ -134,7 +134,7 @@ namespace overlay {
      *
      *  @param  run the run header to process 
      */
-    void processRunHeader( LCRunHeader* run ) override ;  
+    void processRunHeader( lcio::LCRunHeader* run ) override ;  
   
     /** 
      *  @brief  Called after data processing for clean up.
@@ -150,7 +150,7 @@ namespace overlay {
     /** 
      *  @brief  Helper method to randomly pick an event from available overlay input files 
      */
-    LCEvent* readNextEvent() ;
+    lcio::LCEvent* readNextEvent() ;
 
   private:
     // processor parameters

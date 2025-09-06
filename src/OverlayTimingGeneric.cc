@@ -6,6 +6,8 @@
 #include <marlin/Global.h>
 #include <marlin/ProcessorEventSeeder.h>
 
+using namespace lcio;
+
 OverlayTimingGeneric aOverlayTimingGeneric;
 
 OverlayTimingGeneric::OverlayTimingGeneric(): OverlayTiming("OverlayTimingGeneric")

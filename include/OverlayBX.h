@@ -104,7 +104,7 @@ namespace overlay{
 
     virtual const std::string & name() const { return Processor::name() ; }
   
-    virtual void modifyEvent( LCEvent * evt ) ; 
+    virtual void modifyEvent( lcio::LCEvent * evt ) ; 
 
 
     /** Called at the begin of the job before anything is read.
@@ -114,14 +114,14 @@ namespace overlay{
   
     /** Called for every run.
      */
-    virtual void processRunHeader( LCRunHeader* run ) ;
+    virtual void processRunHeader( lcio::LCRunHeader* run ) ;
   
     /** Called for every event - the working horse.
      */
-    //  virtual void processEvent( LCEvent * evt ) ; 
+    //  virtual void processEvent( lcio::LCEvent * evt ) ; 
   
   
-    virtual void check( LCEvent * evt ) ; 
+    virtual void check( lcio::LCEvent * evt ) ; 
   
   
     /** Called after data processing for clean up.
@@ -132,20 +132,20 @@ namespace overlay{
   protected:
   
     /** helper function for (randomly) reading the next event */
-    //  LCEvent*  readNextEvent() ;
+    //  lcio::LCEvent*  readNextEvent() ;
 
     /** helper function for reading the next event of BX bxNum */
-    LCEvent*  readNextEvent(int bxNum) ;
+    lcio::LCEvent*  readNextEvent(int bxNum) ;
 
     /** helper function */
     void init_geometry() ;
     /** helper function */
-    int mergeVXDColsFromBX( LCCollection* vxdCol , LCCollection* vxdBGCol , int bxNum )  ;
+    int mergeVXDColsFromBX( lcio::LCCollection* vxdCol , lcio::LCCollection* vxdBGCol , int bxNum )  ;
     /** helper function */
-    int mergeTPCColsFromBX( LCCollection* tpcCol , LCCollection* tpcBGCol , float zPosShift ) ;
+    int mergeTPCColsFromBX( lcio::LCCollection* tpcCol , lcio::LCCollection* tpcBGCol , float zPosShift ) ;
 
     // ---- variables for processor parameters ----- 
-    StringVec   _inputFileNames{};
+    lcio::StringVec   _inputFileNames{};
     int         _eventsPerBX = -1;
     float       _bxTime_s = 3.0e-7;
     float       _tpcVdrift_mm_s = 5.0e7;
@@ -154,15 +154,15 @@ namespace overlay{
     bool        _keepPairsTruthInfo = false;
     bool        _phiRotateTPCHits = false;
 
-    FloatVec    _vxdLayerReadOutTimes{};
+    lcio::FloatVec    _vxdLayerReadOutTimes{};
 
-    StringVec   _tpcCollections{};
+    lcio::StringVec   _tpcCollections{};
     //  std::string _tpcCollection ;
 
     std::string _mcpCollection = "";
   
     std::string _vxdCollection = "";
-    StringVec   _mergeCollections{};
+    lcio::StringVec   _mergeCollections{};
     int         _ranSeed = 42;
 
     //---- class member variables ------
@@ -171,7 +171,7 @@ namespace overlay{
     StrMap _colMap{};
     //  std::map<std::string, std::string> _colMap;
 
-    std::vector< LCReader* > _lcReaders{};
+    std::vector< lcio::LCReader* > _lcReaders{};
     //int _maxBXs ;
     int _nRun = 0;
     int _nEvt = 0;
