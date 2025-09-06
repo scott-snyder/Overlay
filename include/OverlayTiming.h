@@ -89,7 +89,7 @@ namespace overlay {
 
     unsigned int _nRun = 0;
     unsigned int _nEvt = 0;
-    StringVec _inputFileNames{};
+    lcio::StringVec _inputFileNames{};
 
     int _BX_phys = 1;
     float _NOverlay = 1 ;
@@ -128,7 +128,7 @@ namespace overlay {
     float _DefaultStart_int = -0.25;
 
     IO::LCReader* overlay_Eventfile_reader = NULL;
-    LCEvent* overlay_Evt = nullptr;
+    lcio::LCEvent* overlay_Evt = nullptr;
     int m_eventCounter = 0;
     int m_currentFileIndex = 0;
     int m_startWithBackgroundFile = -1;

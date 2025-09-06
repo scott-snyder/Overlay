@@ -54,7 +54,7 @@ namespace overlay{
 
     virtual const std::string & name() const { return Processor::name() ; }
 
-    virtual void modifyEvent( LCEvent * evt ) ; 
+    virtual void modifyEvent( lcio::LCEvent * evt ) ; 
 
     /** Called at the begin of the job before anything is read.
      * Use to initialize the processor, e.g. book histograms.
@@ -63,9 +63,9 @@ namespace overlay{
   
     /** Called for every run.
      */
-    virtual void processRunHeader( LCRunHeader* run ) ;
+    virtual void processRunHeader( lcio::LCRunHeader* run ) ;
   
-    virtual void check( LCEvent * evt ) ; 
+    virtual void check( lcio::LCEvent * evt ) ; 
   
   
     /** Called after data processing for clean up.
@@ -76,26 +76,26 @@ namespace overlay{
   protected:
   
     /** helper function for (randomly) reading the next event */
-    //  LCEvent*  readNextEvent() ;
+    //  lcio::LCEvent*  readNextEvent() ;
 
     /** helper function for reading the next event of BX bxNum */
-    //  LCEvent*  readNextEvent(int bxNum) ;
+    //  lcio::LCEvent*  readNextEvent(int bxNum) ;
 
-    LCEvent*  readNextEvent(int bxNum) ;
+    lcio::LCEvent*  readNextEvent(int bxNum) ;
   
     /** helper function */
     void init_geometry() ;
 
     // ---- variables for processor parameters ----- 
-    StringVec   _inputFileNames{};
-    StringVec   _tmpInputFileNames{}; // not read same file twice or more.
+    lcio::StringVec   _inputFileNames{};
+    lcio::StringVec   _tmpInputFileNames{}; // not read same file twice or more.
     int         _eventsPerBX = -1;
     int         _numBX = 100;
     bool        _removeVTX = false;
   
     std::string _vxdCollection = "VXDCollection";
     std::string _vtxPixelHitsCollection = "VTXPixelHits" ;
-    StringVec   _mergeCollections{"VTXPixelHits", "VTXPixelHits"} ;
+    lcio::StringVec   _mergeCollections{"VTXPixelHits", "VTXPixelHits"} ;
     int         _nLayer = 0;
     int         _maxLadder = 0;
     //---- class member variables ------
@@ -103,7 +103,7 @@ namespace overlay{
     StrMap _colMap{};
     //  std::map<std::string, std::string> _colMap;
 
-    std::vector< LCReader* > _lcReaders{};
+    std::vector< lcio::LCReader* > _lcReaders{};
     //int _maxBXs ;
     int _nRun = 0;
     int _nEvt = 0;
