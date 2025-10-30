@@ -1,6 +1,10 @@
 Bottom: 297cc123fbc4f8c478a7039e8df7900112dea5d4
 Top:    029374e04cb7d19dfc8767d8db3f495918ace21d
 Author: sss <sss@karma>
-Date:   2025-08-01 16:41:38 -0400
+Date:   2025-10-30 13:04:52 -0400
 
-cmake dev warnings.
+Fix cmake development/deprecation warnings.
+
+Update minimum cmake version to 3.10.
+
+Enable NEW policy for CMP0167.
