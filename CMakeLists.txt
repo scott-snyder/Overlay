@@ -6,6 +6,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.10 FATAL_ERROR)
 
 
 cmake_policy(SET CMP0167 NEW)
+cmake_policy(SET CMP0074 NEW)
 
 # project name
 PROJECT( Overlay )
